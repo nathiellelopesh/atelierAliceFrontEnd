@@ -4,13 +4,17 @@ aside {
     justify-content: center;
     align-items: center;
     background-color: var(--mainColor);
-
 }
 
-aside > div {
+.optionContainer {
     padding: 25px 20px;
     width: 150px;
     text-align: center;
+}
+
+.optionContainer:hover {
+    cursor: pointer;
+    background-color: var(--secondaryColor);
 }
 
 p {

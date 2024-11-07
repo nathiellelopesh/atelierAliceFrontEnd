@@ -1,8 +1,8 @@
-.home-banner-container {
+.homeBannerContainer {
     height: 75vh;
 }
 
-.home-banner {
+.homeBanner {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,19 +17,20 @@
     font-family: var(--fontFamilyPrincipal);
 }
 
-.home-banner > h2 {
+.homeBanner > h2 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 2.3rem;
+    color: #fff;
 }
 
-.home-productList {
+.homeProductList {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
 }
 
-.home-productList > h3 {
+.homeProductList > h3 {
     font-size: 2rem;
     font-family: var(--fontFamilyPrincipal);
 }
