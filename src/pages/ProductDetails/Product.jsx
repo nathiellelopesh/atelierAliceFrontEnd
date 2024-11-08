@@ -3,6 +3,7 @@ import axios from 'axios'
 import styles from './style.module.css'
 import { useEffect, useState } from 'react'
 import { FaWhatsapp } from "react-icons/fa";
+import Header from '../../Components/Header';
 
 
 export default function ProductDetails() {
@@ -14,7 +15,7 @@ export default function ProductDetails() {
 
     async function getItem() {
         try {
-            const response = await axios.get(`http://localhost:3000/atelier/produto/${id}`);
+            const response = await axios.get(`http://localhost:3000/atelier/${id}`);
             setProductInfo(response.data)
             console.log(response.data)
         } catch (error) {
@@ -28,24 +29,26 @@ export default function ProductDetails() {
     }, []);
 
     if (!productInfo) {
-        return <div>Carregando...</div>;
+        return <div className={styles.loading}>Carregando...</div>;
     }
 
     const { title, price, description, images } = productInfo;
 
-    const pixPayment = Math.floor(price * 0.90);
+    const pixPayment = Math.floor(price * 0.85);
 
-    
+    const message = `Olá! Gostaria de saber mais sobre o vestido: *${productInfo.title}*.\nPreço: R$ ${productInfo.price},00.`
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/5545999462126?text=${encodedMessage}`;
 
     return (
-        <section>
-
+        <>
+            <Header/>
             <div className={styles.ProductInformation}>
                 
                 <div className={styles.imagesProduct}>
                     <div className={styles.smallImg}>
-                        {images.map(image => (
-                            <img src={image} onClick={() => setPicture(image)}/>
+                        {images.map((image,i) => (
+                            <img key={i} src={image} onClick={() => setPicture(image)}/>
                         ))}
                     </div>
                     <img src={picture ? picture : images[0]} className={styles.bigImg}/>
@@ -56,13 +59,13 @@ export default function ProductDetails() {
                     <p className={styles.description}>{description}</p>
                     <p className={styles.price}>R$ {price}</p>
                     
-                    <p>à vista no Pix ou Dinheiro com 10% off: R$ <span className={styles.pix}>{pixPayment}</span></p>
-                    <button><FaWhatsapp />Comprar</button>
+                    <p className={styles.paymentMethod}>à vista no Pix ou Dinheiro com 15% off: R$ <span className={styles.pix}>{pixPayment},00</span></p>
+                    <button onClick={() => window.open(whatsappLink, "_blank")}><FaWhatsapp />Comprar</button>
                 </div>
             </div>
 
             
-        </section>
+        </>
     )
 }
 

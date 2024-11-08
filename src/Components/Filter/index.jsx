@@ -1,12 +1,11 @@
 import { Checkbox, FormGroup, FormControlLabel  } from '@mui/material';
-
-import './filter.css'
+import styles from './style.module.css'
 
 export default function Filter() {
     return (
-        <section className='filter-container'>
+        <section className={styles.filterContainer}>
             <p>Filtros</p>
-            <div className='filter-item'>
+            <div className={styles.filterItem}>
                 <label>Categoria</label>
                 <FormGroup>
                     <FormControlLabel control={<Checkbox />} label="Cetim" />
@@ -15,7 +14,7 @@ export default function Filter() {
                     <FormControlLabel control={<Checkbox />} label="Viscose" />
                 </FormGroup>
             </div>
-            <div className='filter-item'>
+            <div className={styles.filterItem}>
                 <label>Tamanho</label>
                 <FormGroup>
                     <FormControlLabel control={<Checkbox />} label="P" />

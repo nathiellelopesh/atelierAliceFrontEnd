@@ -1,17 +1,17 @@
-.filter-container {
+.filterContainer {
     width: 250px;
     border: 1px solid gray;
     padding: 20px;
     font-family: var(--fontFamilyPrincipal);
 }
 
-.filter-container > p {
+.filterContainer > p {
     font-size: 1.5rem;
     padding-bottom: 30px;
     font-family: var(--fontFamilyPrincipal);
 }
 
-.filter-item {
+.filterItem {
     font-size: 1.2rem;
     padding-bottom: 30px;
 }

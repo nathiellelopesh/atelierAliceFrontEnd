@@ -1,5 +1,5 @@
-import Header from '../../Components/Header/Header'
-import ProductList from '../../Components/ProductList/ProductList'
+import Header from '../../Components/Header'
+import ProductList from '../../Components/ProductList'
 import styles from './style.module.css'
 
 export default function Home() {

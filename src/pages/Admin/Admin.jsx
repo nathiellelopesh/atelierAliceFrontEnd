@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AsideAdmin from "../../Components/AsideAdmin/AsideAdmin";
+import AsideAdmin from "../../Components/AsideAdmin";
 import FilterAdmin from "../../Components/FilterAdmin";
 import ProductListAdmin from "../../Components/ProductListAdmin";
 import styles from './style.module.css'
