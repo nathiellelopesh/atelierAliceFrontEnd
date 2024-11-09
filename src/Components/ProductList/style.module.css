@@ -1,5 +1,4 @@
 .productListContainer {
-
     display: flex;
     gap: 25px;
 }
@@ -16,4 +15,8 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
+}
+
+a {
+    height: fit-content;
 }

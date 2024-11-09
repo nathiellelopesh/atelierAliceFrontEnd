@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { CiEdit } from "react-icons/ci";
 import styles from './style.module.css'
 
-export default function ProductListAdmin() {
+export default function ProductListAdmin({editar}) {
     const [data, setData] = useState([])
 
     async function getProducts() {
@@ -38,7 +38,7 @@ export default function ProductListAdmin() {
                                 <td>{item.title}</td>
                                 <td>{item.price}</td>
                                 <td  className={styles.editColumn}>
-                                    <CiEdit className={styles.editIcon} size="2rem"/>
+                                    <CiEdit className={styles.editIcon} size="2rem" onClick={editar}/>
                                 </td>
                             </tr>
                         ))}

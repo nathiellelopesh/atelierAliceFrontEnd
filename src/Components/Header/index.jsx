@@ -12,10 +12,9 @@ export default function Header() {
             <div>
                 <nav className={styles.headerNav}>
                     <Link to={"/"}>HOME</Link>
-                    <Link to={"/"}>CATALOGO DE VESTIDOS</Link>
                     <Link to={"/"}>ORÇAMENTO</Link>
-                    <Link to={"/"}>CONTATO</Link>
                     <Link to={"/"}>AGENDAR ATENDIMENTO</Link>
+                    <Link to={"/"}>CONTATO</Link>
                 </nav>
             </div>
         </header>

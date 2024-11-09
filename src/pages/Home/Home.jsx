@@ -1,5 +1,7 @@
+import Footer from '../../Components/Footer'
 import Header from '../../Components/Header'
 import ProductList from '../../Components/ProductList'
+import Quotation from '../../Components/Quotation'
 import styles from './style.module.css'
 
 export default function Home() {
@@ -16,7 +18,8 @@ export default function Home() {
             <h3>Disponíveis para venda</h3>
             <ProductList/>
         </section>
-        
+        <Quotation/>
+        <Footer/>
         </>
     )
 }

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import styles from './style.module.css'
 
-export default function CreateProduct({saveProduct}) {
-    const [formData, setFormData] = useState({title: "", description: "", price: 0, images: [], size: "", promotion: false, filter: []})
+export default function FormProduct({title, buttonSubmit, saveProduct}) {
+    const [formData, setFormData] = useState({title: "", description: "", price: null, images: [], size: "", promotion: false, filter: []})
     
     const handleSubmit = (event) => {
         event.preventDefault();  
@@ -11,7 +11,7 @@ export default function CreateProduct({saveProduct}) {
 
     return (
         <section className={styles.createProductContainer}>
-            <h2>Novo Produto</h2>
+            <h2>{title}</h2>
 
             <form onSubmit={handleSubmit}>
                 <label>Título:</label>
@@ -37,7 +37,8 @@ export default function CreateProduct({saveProduct}) {
                 <label>Filtros (separados por vírgula):</label>
                 <input value={formData.filter} onChange={(ev) => setFormData({...formData, filter: ev.target.value.split(',')})}/>
 
-                <button type='submit'>Cadastrar Produto</button>
+                <button type='submit'>{buttonSubmit}</button>
+                <button type='button' onClick={() => deleteProduct(productId)}>Excluir</button>
             </form>
         </section>
     )

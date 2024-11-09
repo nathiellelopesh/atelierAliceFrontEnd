@@ -4,6 +4,7 @@ import styles from './style.module.css'
 import { useEffect, useState } from 'react'
 import { FaWhatsapp } from "react-icons/fa";
 import Header from '../../Components/Header';
+import Footer from '../../Components/Footer';
 
 
 export default function ProductDetails() {
@@ -62,9 +63,10 @@ export default function ProductDetails() {
                     <p className={styles.paymentMethod}>à vista no Pix ou Dinheiro com 15% off: R$ <span className={styles.pix}>{pixPayment},00</span></p>
                     <button onClick={() => window.open(whatsappLink, "_blank")}><FaWhatsapp />Comprar</button>
                 </div>
+
             </div>
 
-            
+            <Footer/>
         </>
     )
 }
