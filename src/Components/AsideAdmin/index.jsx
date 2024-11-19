@@ -3,11 +3,13 @@ import { BsCart2 } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import styles from './style.module.css'
+import { useNavigate } from "react-router-dom";
 
 export default function AsideAdmin({allProducts, soldProducts, orders, schedule}) {
+    const navigate = useNavigate()
     return (
         <aside>
-                <div className={styles.optionContainer}>
+                <div className={styles.optionContainer} onClick={() => navigate('/admin')}>
                     <BsBoxSeam onClick={allProducts} color="#fff" size={"2.4rem"}/>
                     <p>Gerenciar Produtos</p>
                 </div>

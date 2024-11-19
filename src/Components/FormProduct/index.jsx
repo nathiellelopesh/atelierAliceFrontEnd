@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './style.module.css'
 
-export default function FormProduct({title, buttonSubmit, saveProduct}) {
+export default function FormProduct({ saveProduct }) {
     const [formData, setFormData] = useState({title: "", description: "", price: null, images: [], size: "", promotion: false, filter: []})
     
     const handleSubmit = (event) => {
@@ -11,7 +11,7 @@ export default function FormProduct({title, buttonSubmit, saveProduct}) {
 
     return (
         <section className={styles.createProductContainer}>
-            <h2>{title}</h2>
+            <h2>Novo Produto</h2>
 
             <form onSubmit={handleSubmit}>
                 <label>Título:</label>
@@ -24,7 +24,7 @@ export default function FormProduct({title, buttonSubmit, saveProduct}) {
                 <input type="number" value={formData.price} onChange={(ev) => setFormData({...formData, price: ev.target.value})} required/>
                 
                 <label>Imagens (URLs separados por vírgula):</label>
-                <input value={formData.images} onChange={(ev) => setFormData({...formData, images: ev.target.value.split(',')})} required/>
+                <textarea value={formData.images} onChange={(ev) => setFormData({...formData, images: ev.target.value.split(',')})} required/>
 
                 <label>Tamanho:</label>
                 <input value={formData.size} onChange={(ev) => setFormData({...formData, size: ev.target.value})} required/>
@@ -37,8 +37,8 @@ export default function FormProduct({title, buttonSubmit, saveProduct}) {
                 <label>Filtros (separados por vírgula):</label>
                 <input value={formData.filter} onChange={(ev) => setFormData({...formData, filter: ev.target.value.split(',')})}/>
 
-                <button type='submit'>{buttonSubmit}</button>
-                <button type='button' onClick={() => deleteProduct(productId)}>Excluir</button>
+                <button type='submit'>Cadastrar</button>
+                
             </form>
         </section>
     )

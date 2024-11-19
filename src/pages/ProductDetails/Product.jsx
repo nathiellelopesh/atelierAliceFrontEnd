@@ -59,7 +59,7 @@ export default function ProductDetails() {
                     <h1 className={styles.title}>{title}</h1>
                     <p className={styles.description}>{description}</p>
                     <p className={styles.price}>R$ {price}</p>
-                    
+                    <p  className={styles.paymentMethod}>Pagamentos no cartão em até 3x sem juros</p>
                     <p className={styles.paymentMethod}>à vista no Pix ou Dinheiro com 15% off: R$ <span className={styles.pix}>{pixPayment},00</span></p>
                     <button onClick={() => window.open(whatsappLink, "_blank")}><FaWhatsapp />Comprar</button>
                 </div>

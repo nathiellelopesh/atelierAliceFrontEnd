@@ -4,6 +4,8 @@ aside {
     justify-content: center;
     align-items: center;
     background-color: var(--mainColor);
+    height: 100vh;
+
 }
 
 .optionContainer {
