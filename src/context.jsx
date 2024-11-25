@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import AlertComponent from "./Components/Alert";
-import AlertDialog from './Components/Dialog';
 
 const AppContext = createContext(null);
 
@@ -34,7 +33,7 @@ const AppProvider = ({children}) => {
                 { alertMessage &&
                     <div
                         style={{
-                            position: 'absolute',
+                            position: 'fixed',
                             left: 0,
                             bottom: 0,
                             width: '100%',

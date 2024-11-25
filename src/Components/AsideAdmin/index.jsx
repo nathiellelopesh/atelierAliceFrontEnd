@@ -2,7 +2,7 @@ import { BsBoxSeam } from "react-icons/bs";
 import { BsCart2 } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import styles from './style.module.css'
+import styles from './aside.module.css'
 import { useNavigate } from "react-router-dom";
 
 export default function AsideAdmin({allProducts, soldProducts, orders, schedule}) {

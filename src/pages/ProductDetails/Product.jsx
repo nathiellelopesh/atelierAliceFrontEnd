@@ -1,10 +1,11 @@
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import styles from './style.module.css'
+import styles from './productDetails.module.css'
 import { useEffect, useState } from 'react'
 import { FaWhatsapp } from "react-icons/fa";
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
+import BasicButtons from '../../Components/Button';
 
 
 export default function ProductDetails() {
@@ -61,7 +62,27 @@ export default function ProductDetails() {
                     <p className={styles.price}>R$ {price}</p>
                     <p  className={styles.paymentMethod}>Pagamentos no cartão em até 3x sem juros</p>
                     <p className={styles.paymentMethod}>à vista no Pix ou Dinheiro com 15% off: R$ <span className={styles.pix}>{pixPayment},00</span></p>
-                    <button onClick={() => window.open(whatsappLink, "_blank")}><FaWhatsapp />Comprar</button>
+                    <BasicButtons
+                        sx={{
+                            width: 150,
+                            display: 'flex',
+                            gap: '5px',
+                            padding: '8px 16px',
+                            borderRadius: '8px', 
+                            boxShadow: 3, 
+                            transition: '0.3s', 
+                            '&:hover': {
+                              backgroundColor: '#25D366',  
+                              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', 
+                            },
+                            fontSize: '16px',
+                          }}
+                        color='success'
+                        onClick={() => window.open(whatsappLink, "_blank")}
+                    >
+                        <FaWhatsapp /> Comprar
+                    </BasicButtons>
+                    
                 </div>
 
             </div>
