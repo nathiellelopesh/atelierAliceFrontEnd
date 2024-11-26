@@ -7,6 +7,7 @@ import Admin from './pages/Admin/AllProducts/Admin.jsx';
 import UpdateProductsScreen from './pages/Admin/UpdateProducts/index.jsx';
 import AppProvider from './context.jsx';
 import AddProduct from './pages/Admin/AddProduct/index.jsx';
+import Sold from './pages/Admin/Sold/index.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: '/admin/newProduct',
     element: <AddProduct/>
+  },
+  {
+    path: '/admin/sold',
+    element: <Sold/>
   }
 ])
 

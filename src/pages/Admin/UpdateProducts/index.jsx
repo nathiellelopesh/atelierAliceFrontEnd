@@ -14,10 +14,10 @@ export default function UpdateProductsScreen() {
         title: '',
         price: '',
         size: '',
-        filter: [],
         description: '',
         images: [],
-        promotion: false,
+        is_promotion: false,
+        is_sold: false
     });
 
     const [openDialog, setOpenDialog] = useState(false);
@@ -58,6 +58,7 @@ export default function UpdateProductsScreen() {
 
     const handleDialogClose = async (confirmed) => {
         setOpenDialog(false);
+
         if (confirmed) {
             try {
                 if (actionType === 'save') {
@@ -77,6 +78,10 @@ export default function UpdateProductsScreen() {
         }
         
     }
+
+    useEffect(() => {
+        console.log(formData)
+    }, [formData])
     
 
     return (
@@ -146,12 +151,20 @@ export default function UpdateProductsScreen() {
                         />
                     </div>
                     
-                   
-                    <CheckboxLabel
-                        label={"Em promoção?"}
-                        checked={formData.promotion}
-                        onChange={(ev) => setFormData({...formData, promotion: ev.target.checked})}
-                    />
+                   <div style={styles.InputContainer}>
+                        <CheckboxLabel
+                            sx={{paddingRight: '15px'}}
+                            label="Em promoção"
+                            checked={formData.is_promotion}
+                            onChange={(ev) => setFormData({...formData, is_promotion: ev.target.checked})}
+                        />
+
+                        <CheckboxLabel
+                            label={"Vendido"}
+                            checked={formData.is_sold}
+                            onChange={(ev) => setFormData({...formData, is_sold: ev.target.checked})}
+                        />
+                    </div>
                     <div style={styles.buttons}>
                         <BasicButtons color={"primary"} onClick={saveProduct}>Salvar</BasicButtons>
                         <BasicButtons color={"error"} onClick={deleteProduct}>Deletar</BasicButtons>

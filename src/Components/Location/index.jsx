@@ -1,6 +1,6 @@
 import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
+import { IoLocationOutline } from "react-icons/io5";
 
 
 import Title from "../Title";
@@ -29,7 +29,7 @@ export default function Location() {
                 </section>
                 <section style={styles.contactInfo}>
                     <div style={styles.contactItem}>
-                        <FaLocationDot size={"1.5em"} color="#0b3874"/>
+                        <IoLocationOutline size={"1.8em"} color="#0b3874"/>
                         <p>Rua Bartolomeu de Gusmão 760, centro - Foz do Iguaçu - PR</p>
                     </div>
                     
@@ -68,6 +68,7 @@ const styles = {
     },
     contactItem: {
         display: 'flex',
+        alignItems: 'center',
         marginBottom: '20px',
         gap: '15px',
         fontSize: '18px',

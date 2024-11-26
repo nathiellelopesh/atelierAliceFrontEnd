@@ -21,8 +21,10 @@ export default function Admin() {
         <section style={styles.adminContainer}>
             <AsideAdmin/>
             <section style={styles.adminContent}>
+            
                 <div style={styles.adminHeader}>
                     <div style={styles.filter}>
+                    <h2>Produtos Disponiveis</h2>
                         <FilterAdmin/>
                     </div>
                     <div  style={styles.icon} onClick={saveNewProduct}>

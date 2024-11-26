@@ -13,7 +13,7 @@ export default function AsideAdmin({allProducts, soldProducts, orders, schedule}
                     <BsBoxSeam onClick={allProducts} color="#fff" size={"2.4rem"}/>
                     <p>Gerenciar Produtos</p>
                 </div>
-                <div className={styles.optionContainer}>
+                <div className={styles.optionContainer} onClick={() => navigate('/admin/sold')}>
                     <BsCart2 onClick={soldProducts} color="#fff" size={"2.4rem"}/>
                     <p>Vendidos</p>
                 </div>
