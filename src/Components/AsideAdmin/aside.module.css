@@ -25,3 +25,9 @@ aside {
 .optionContainer > p {
     color: #fff;
 }
+
+.email {
+    padding-top: 8px;
+    font-size: 14px;
+    word-wrap: break-word;
+}

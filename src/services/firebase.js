@@ -1,16 +1,16 @@
-//
+
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 //import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBkeq_8QHPXp_sf_plI-FokZId8WcQHWlQ",
-  authDomain: "atelier-alice-3b9c3.firebaseapp.com",
-  projectId: "atelier-alice-3b9c3",
-  storageBucket: "atelier-alice-3b9c3.firebasestorage.app",
-  messagingSenderId: "574778878472",
-  appId: "1:574778878472:web:6c4cc9253b1b0652af7fbd",
-  measurementId: "G-C1RMV4GBX1"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);

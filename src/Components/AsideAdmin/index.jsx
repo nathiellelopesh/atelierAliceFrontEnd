@@ -12,7 +12,7 @@ import { useAppContext } from "../../context";
 export default function AsideAdmin({allProducts, soldProducts, orders, schedule}) {
     const navigate = useNavigate();
 
-    const {showAlertMessage} = useAppContext()
+    const {showAlertMessage, user} = useAppContext()
 
     const signout = async () => {
         try {
@@ -49,6 +49,7 @@ export default function AsideAdmin({allProducts, soldProducts, orders, schedule}
             <div  className={styles.optionContainer}>
                 <PiSignOutBold onClick={signout} color="#fff" size={"1.5rem"}/>
                 <p>Sair</p>
+                <p className={styles.email}>{user.email}</p>
             </div>
         </aside>
     )
