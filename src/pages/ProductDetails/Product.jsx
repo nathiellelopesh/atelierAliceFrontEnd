@@ -3,9 +3,11 @@ import axios from 'axios'
 import styles from './productDetails.module.css'
 import { useEffect, useState } from 'react'
 import { FaWhatsapp } from "react-icons/fa";
-import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import BasicButtons from '../../Components/Button';
+import manequim from '../../img/logo.png';
+import { Link } from 'react-router-dom';
+import { IoArrowBack } from "react-icons/io5";
 
 
 export default function ProductDetails() {
@@ -43,8 +45,17 @@ export default function ProductDetails() {
     const whatsappLink = `https://wa.me/5545999462126?text=${encodedMessage}`;
 
     return (
-        <>
-            <Header/>
+        <>  
+            <header>
+                <div className={styles.headerTitle}>
+                    <img src={manequim}/>
+                    <p>ATELIER ALICE</p>
+                </div>
+                <Link to={"/"} className={styles.headerNav}>
+                    <IoArrowBack color='#fff' size={'1.8rem'}/>
+                    <a>Voltar</a>
+                </Link>
+            </header>
             <div className={styles.ProductInformation}>
                 
                 <div className={styles.imagesProduct}>

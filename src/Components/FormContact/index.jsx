@@ -71,11 +71,14 @@ export default function FormContact () {
                     onChange={(ev) => setFormData({...formData, message: ev.target.value})}
                     required
                 />
-
+                <span>Se preferir, adicione um link do modelo da sua roupa sob medida.</span>
+                {/* 
                 <InputFileUpload
                     message={"Imagem de Referência"}
                     onChange={(ev) => setFormData({...formData, image: ev.target.files[0]})}
                 />
+                */}
+                
 
                 {formData.image && <span>{formData.image.name}</span>}
                 <BasicButtons type='submit'>Enviar</BasicButtons>

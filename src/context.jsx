@@ -1,4 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './services/firebase';
 import AlertComponent from "./Components/Alert";
 
 const AppContext = createContext(null);
@@ -7,6 +9,16 @@ const AppProvider = ({children}) => {
     const [alertMessage, setAlertMessage] = useState("");
     const [alertSeverity, setAlertSeverity] = useState("");
     const [alertVariant, setAlertVariant] = useState(null);
+
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+          setUser(user);
+        });
+    
+        return () => unsubscribe();
+      }, []);
 
     const timeoutDuration = 4000;
 
@@ -23,6 +35,7 @@ const AppProvider = ({children}) => {
 
     const sharedState = {
         showAlertMessage,
+        user
     };
 
     return (

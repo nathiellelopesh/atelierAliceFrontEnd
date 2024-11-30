@@ -1,3 +1,46 @@
+header {
+    width: 100%;
+    background-color: var(--mainColor);
+    font-family: var(--fontFamilySecondary);
+    color: #fff;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerTitle > img {
+    height: 130px;
+}
+
+.headerTitle {
+    flex: 1;
+    color: #fff;
+    font-weight: 600;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.headerTitle > p {
+    font-size: 1.8rem;
+}
+
+.headerNav {
+    display: flex;
+    gap: 12px;
+    text-align: left;
+    padding: 15px;
+    font-family: var(--fontFamilyPrincipal);
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.headerNav > a {
+    color: #fff;
+}
+
 .ProductInformation {
     display: flex;
     margin: 0 auto;

@@ -7,6 +7,10 @@ aside {
     height: 100vh;
 }
 
+.containerItems {
+    flex: 1
+}
+
 .optionContainer {
     padding: 25px 20px;
     width: 150px;
