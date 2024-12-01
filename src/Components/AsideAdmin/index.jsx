@@ -46,8 +46,8 @@ export default function AsideAdmin({allProducts, soldProducts, orders, schedule}
                     <p>Agenda</p>
                 </div>
             </div>
-            <div  className={styles.optionContainer}>
-                <PiSignOutBold onClick={signout} color="#fff" size={"1.5rem"}/>
+            <div  className={styles.optionContainer} onClick={signout}>
+                <PiSignOutBold color="#fff" size={"1.5rem"}/>
                 <p>Sair</p>
                 <p className={styles.email}>{user.email}</p>
             </div>

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import manequim from '../../img/logo.png';
 import styles from './style.module.css'
 
@@ -11,7 +10,8 @@ export default function Header() {
             </div>
             <div>
                 <nav className={styles.headerNav}>
-                    <Link to={"/"}>HOME</Link>
+                    <a href='#home'>HOME</a>
+                    <a href='#colecoes'>COLEÇÕES</a>
                     <a href="#form-contact">ORÇAMENTO</a>
                     <a href='#location'>LOCALIZAÇÃO</a>
                     <a href='#location'>CONTATO</a>
